@@ -1,0 +1,275 @@
+/* ======= POLICES ======== */
+
+@import "fonts.less";
+
+/* ======= CONSTANTES COULEURS  ======== */
+
+@blue : #6BF;
+@light_grey : #CCC;
+@grey : #999;
+@dark_grey : #666;
+@black : #121212;
+
+/* ======= CLASSES ABSTRAITES LESS ======== */
+
+@import "functions.less";
+
+/* ============================================
+
+	Pied de page entièrement responsive par
+	l'utilisation de media queries
+
+=============================================== */
+
+footer {
+
+	background-color: @black;
+	.dimensions(100%, auto);
+
+	.block-contents, .block-text, .row {margin: auto;}
+	.block-contents {height: auto;}
+	.block-image, .block-text {padding: 0px;}
+	.row .row {width: 100%;}
+
+	h5 {
+		color: @light_grey;
+	}
+
+	h6 {
+		color: @light_grey;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	ol {
+		.spacing(auto, 0% 3%);
+
+		li {
+			font-family: 'sf-ui-light';
+			font-size: 0.9em;
+			color: @dark_grey;
+			text-align: left;
+			padding: 2px;
+
+			a {
+				font-family: inherit;
+				font-size: inherit;
+				&:hover {color: @light_grey;}
+				&:focus {color: @grey;}
+			}
+
+			mark {
+				&:hover {color: @light_grey;}
+			}
+		}
+	}
+
+	ul {
+		padding: 0px 10px 0px 10px;
+
+		li {
+			font-family: 'sf-compact-regular';
+			font-size: 0.9em;
+			color: @light_grey;
+			text-align: left;
+		}
+
+		a {
+			font-family: 'sf-ui-light';
+			font-size: 0.9em;
+			color: @grey;
+			&:hover {color: @light_grey;}
+			&:focus {color: @grey;}
+		}
+	}
+
+	p {
+		color: @dark_grey;
+		font-size: 0.9em;
+		margin: 0px;
+	}
+
+	.block-text {
+		p {
+			color: @light_grey;
+			font-size: 1em;
+		}
+
+		a {	
+			color: @blue;
+			&:hover, &:focus {color: @blue;}
+		}
+	}
+
+	mark {
+		color: @grey;
+		background-color: @black;
+	}
+
+	img {
+		padding: 0px;
+	}
+
+	.small-link {
+		font-family: 'sf-ui-light';
+		font-size: 1em;
+	}
+
+	.large-link {
+		font-family: 'sf-compact-regular';
+		font-size: 1.2em;
+	}
+
+	.vertical-top, .vertical-bottom {padding: 0px;}
+	.vertical-top {vertical-align: top;}
+	.vertical-bottom {vertical-align: bottom;}
+
+	.horizontal-line {background-color: @grey;}
+	.vertical-line {background-color: @grey;}
+
+	.spacing {
+		* {padding: 3px;}	
+	}
+
+	/* Aide à la navigation */
+	.breadcrumb {
+		background-color: @black;
+
+		li, a {font-family: 'sf-ui-light';}
+
+		a {
+			font-size: 1em;
+			color: @grey;
+			&:hover, &:focus {color: @grey;}
+		}
+
+		img {.dimensions(12px, 12px);}
+	}
+
+	.infos {
+		font-size: 0.9em;
+		color: @dark_grey;
+		a {	
+			color: @blue;
+			&:hover {color: @blue;}
+		}
+	}
+
+	.list-footer-link {margin-bottom: 30px;}
+
+	.drop-down-btn {
+		position: relative;
+		width: 100%;
+		font-family: 'sf-compact-regular';
+		font-size: 0.9em;
+		color: @light_grey;
+
+		span {
+			font-size: 20px;
+			padding: 0px 10px 0px 10px;
+		}
+
+		&:hover {color: white;}
+		&:focus {outline: none;}
+	}
+
+	.flag {
+		margin-right: 5px;
+		.dimensions(15px, 15px);
+	}
+
+	.country {
+		color: @grey;
+		font-family: 'sf-ui-light';
+		font-size: 0.9em;
+		&:hover {color: @light_grey;}
+	}
+
+	/* Ces listes sont cachés lorsqu'on est sur mobile 
+	et apparaissent lorsqu'on clique sur le boutton */
+	.drop-down-list {
+
+		@media all and (max-width: 767px) {
+			li {display: none;}
+		}
+
+		&.visible {
+			li {display: block;}
+		}
+	}
+
+
+/*  ====================================================== 
+						MEDIA QUERIES
+	====================================================== */
+
+	& {
+		@media all and (max-width: 767px) {padding-top: 20px;} /* Mobiles */
+		@media all and (min-width: 768px) {padding-top: 30px;} /* Tablettes */
+		@media all and (min-width: 992px) {padding-top: 40px;} /* Ordinateurs */
+	}
+
+	.block-contents {
+		@media all and (max-width: 991px) {width: 100%;} /* Mobiles & Tablettes */ 
+		@media all and (min-width: 992px) {width: 970px;} /* Ordinateurs */
+	}
+
+	.block-image {
+		@media all and (max-width: 767px) {width: 40%;} /* Mobiles */
+		@media all and (min-width: 768px) {width: 34%;} /* Tablettes */
+		@media all and (min-width: 992px) {width: 320px;} /* Ordinateurs */
+	}
+
+	.block-text {
+		@media all and (max-width: 767px) {height: auto; max-width: 70%; margin: 10px auto 10px auto;} /* Mobiles */
+		@media all and (min-width: 768px) {height: 120px; padding: 10px;} /* Tablettes */
+		@media all and (min-width: 992px) {height: auto;} /* Ordinateurs */ 
+	}
+
+	.row {
+		@media all and (max-width: 767px) {width: 90%;} /* Mobiles */
+		@media all and (min-width: 768px) {width: 90%;} /* Tablettes */
+		@media all and (min-width: 992px) {width: 100%;} /* Ordinateurs */ 
+	}
+
+	.horizontal-line {
+		@media all and (max-width: 767px) {width: 90%; margin: 20px auto;} /* Mobiles */
+		@media all and (min-width: 768px) {width: 90%; margin: 30px auto;} /* Tablettes */
+		@media all and (min-width: 992px) {width: 100%; margin: 40px auto;} /* Ordinateurs */ 
+	}
+
+	.col {
+		@media all and (max-width: 767px) {width: 100%;} /* Mobiles */
+		@media all and (min-width: 768px) {width: 19.5%;} /* Tablettes & Ordinateurs */
+	}
+
+	.small-cover {
+		@media all and (max-width: 991px) {width: 80%;} /* Mobiles & Tablettes */
+		@media all and (min-width: 992px) {width: 270px;} /* Ordinateurs */
+	}
+
+	.large-cover {
+		@media all and (max-width: 991px) {width: 100%;} /* Mobiles & Tablettes */
+		@media all and (min-width: 992px) {width: 320px;} /* Ordinateurs */
+	}
+
+	.responsive-width {
+		@media all and (max-width: 767px) {width: 94%;} /* Mobiles */
+		@media all and (min-width: 768px) {width: 30%;} /* Tablettes & Ordinateurs */
+	}
+
+	.breadcrumb {
+		@media all and (max-width: 767px) {padding: 0px 0px 0px 0px; margin-bottom: 0px;} /* Mobiles */
+		@media all and (min-width: 768px) {padding: 10px 0px 10px 0px; margin-bottom: 10px;} /* Tablettes & Ordinateurs */
+	}
+
+	h5 {
+		@media all and (max-width: 767px) {margin-bottom: 0px;} /* Mobiles */
+		@media all and (min-width: 768px) {margin-bottom: 10px;} /* Tablettes & Ordinateurs */
+	}
+
+	ul {
+		@media all and (max-width: 767px) {margin: 0px auto 0px auto;} /* Mobiles */
+		@media all and (min-width: 768px) {margin: 0px auto 18px auto;} /* Tablettes & Ordinateurs */
+	}
+}

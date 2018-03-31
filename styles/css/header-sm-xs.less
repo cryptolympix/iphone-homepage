@@ -1,0 +1,490 @@
+/****************************************************************
+			MENU DE NAVIGATION POUR TABLETTES ET MOBILES
+*****************************************************************/
+
+/* ======= POLICES ======== */
+
+@import "fonts.less";
+
+/* ======= CONSTANTES COULEURS ======== */
+
+@light_grey : #999;
+@grey : #777;
+@dark_grey : #323232;
+
+/* ======= CLASSES ABSTRAITES LESS ======== */
+
+@import "functions.less";
+
+/*  ======================================
+			NAVIGATION PRINCIPALE
+	====================================== */
+
+#menu-nav-sm-xs {
+
+	.dimensions(100%, 50px);
+
+	.list-menu-links {
+		position: relative;
+		z-index: 100;
+		background-color: @dark_grey;
+
+		.transition-1(background-color, 0.5s);
+		&.transform-color {background-color: black;}
+	}
+
+	img {
+		.dimensions(20px, 20px);
+		&:hover {opacity: 0.7;}
+	}  
+
+	/* ========== MOBILES =========== */
+
+	.visible-xs {
+
+		line-height: 40px;
+
+		.list-menu-links {
+			position: relative;
+			.block-properties(100%, 50px, auto, 0px 15px);
+		}
+
+		.btn-nav {
+			position: relative;
+			.dimensions(24px, 20px);
+			margin-top: 13px;
+			&:hover {
+				opacity: 0.7;
+				cursor: pointer;
+			}
+		}
+
+		.btn-block {
+			transform-origin: 0% 50%;
+	        transition: transform 0.3s ease;
+		}
+
+		.btn-block.top, .btn-block.middle, .btn-block.bottom {
+			position: absolute;
+			background-color: white;
+			.block-properties(100%, 1px, 0px 0px 5px 0px, 0px);
+		}
+
+		.btn-block.top {
+			top: 4px;
+			.transition-3(top, width, transform, 0.5s);
+			&.rotate{
+				top: 0px; 
+				width: 32px; 
+				transform: rotate(38.682deg);
+			}
+		}
+
+		.btn-block.middle {
+			top: 10px;
+			.transition-1(transform, 0.5s);
+			&.rotate{transform: scale(0);}
+		}
+
+		.btn-block.bottom {
+			top: 16px;
+			.transition-3(top, width, transform, 0.5s);
+			&.rotate{
+				top: 20px;
+				width: 32px; 
+				transform: rotate(-38.682deg);
+			}
+		}
+
+		.drop-down-container {
+			position: absolute;
+			z-index: 50;
+			top: -700px;
+			background: black;
+			
+			@media all and (max-height: 500px) {.dimensions(100%, 500px);}
+			@media all and (min-height: 500px) {.dimensions(100%, 100%);}
+
+			.transition-1(top, 0.5s);
+			&.transform-position {top: 0%;}
+
+			.drop-down-list {.spacing(80px auto 0px auto, 0px);}
+			
+			li {.spacing(0px 50px, 0px);}
+
+			a {
+				display: block; /* Important ! */
+				color: white;
+				font-family: 'sf-ui-light';
+				text-align: left;
+
+				&:hover, &:focus {
+					text-decoration: none;
+					color : @light_grey;
+				}
+			}
+
+			.input-group {
+				border-bottom: solid 1px @light_grey;
+			}
+
+			input[type="text"] {
+				border: none;
+				background-color: black;
+				text-align: left;
+				font-family: 'sf-ui-light';
+				color: white;
+
+				/* Propriétés du texte placeholder */
+				.placeholder-properties {
+					color: @light_grey;
+					font-family: 'sf-ui-light';
+					font-size: 1.2em;
+				}
+				&::placeholder {.placeholder-properties;} 
+				&:-ms-input-placeholder {.placeholder-properties;} /* IE 10+ */
+				&::-webkit-input-placeholder {.placeholder-properties;} /* Chrome Opera Safari */
+				&::-moz-placeholder {.placeholder-properties;} /* Firefox 19+ */
+				&:-moz-placeholder {.placeholder-properties;} /* Firefox 18- */
+			}
+
+			span {
+				border: none;
+				background-color: black;
+				.spacing(0px, 0px);
+			}
+
+			img {.dimensions(20px, 20px);}
+
+			.horizontal-line {
+				position: relative;
+				top: 0px;
+				background-color: lighten(hsl(0, 0%, 20%), 10%);
+				.transition-2(background-color, top, 1s);
+				&.transform {top: 0px; background-color: lighten(hsl(0, 0%, 20%), 10%);}
+			}
+
+			.form-control {
+				-webkit-box-shadow: none;
+			            box-shadow: none;
+			    -webkit-transition: none;
+			         -o-transition: none;
+			            transition: none;
+			}
+
+		    .transition-2(top, background-color, 1s);
+			&.visible {
+				top: 95px;
+				background-color: @dark_grey;
+			}
+		}
+
+	}
+
+	/* ============ TABLETTES ============= */
+
+	.visible-sm {
+
+		line-height: 42px;
+
+		.list-menu-links {
+			display: table;
+			.block-properties(100%, 45x, 0px, 0px 0px 7px 0px);
+		}
+
+		li {
+			position: relative;
+			display: table-cell;
+			.spacing(0px, 0px 15px);
+
+			&.small-cell {width: 8%;}
+			&.medium-cell {width: 10%px;}
+			&.large-cell {width: 18%px;}
+		}
+
+		a {
+			font-family: 'sf-ui-light';
+			font-size: 1.2em;
+			color: white;
+
+		    .transition-1(color, 250ms);
+			&:hover, &:focus {
+				text-decoration: none;
+				color : lighten(hsl(0, 0%, 12.5%), 70%);
+			}
+		}
+
+		img {
+			.dimensions(20px, 20px);
+			&:hover {opacity: 0.7;}
+		}
+
+		.btn-search:hover {cursor: pointer;}
+
+		.search-container {
+			position: absolute;
+			z-index: 4;
+			top: 0px;
+			left: 50%;
+			opacity: 0;
+			background-color: @dark_grey;
+
+			.block-properties(93%, 50px, 0px 0px 0px -43%, 0px 20px 0px 0px);
+			.transition-2(z-index, opacity, 0.5s);
+
+			&.visible {
+				z-index: 250;
+				opacity: 1;
+			}
+
+			input[type="text"] {
+				border: none;
+				background-color: @dark_grey;
+				text-align: left;
+				font-family: 'sf-ui-light';
+				color: white;
+				height: 50px;
+
+				/* Propriétés du texte placeholder */
+				.placeholder-properties {
+					color: @light_grey;
+					font-family: 'sf-ui-light';
+					font-size: 1.2em;
+				}
+				&::placeholder {.placeholder-properties;} 
+				&:-ms-input-placeholder {.placeholder-properties;} /* IE 10+ */
+				&::-webkit-input-placeholder {.placeholder-properties;} /* Chrome Opera Safari */
+				&::-moz-placeholder {.placeholder-properties;} /* Firefox 19+ */
+				&:-moz-placeholder {.placeholder-properties;} /* Firefox 18- */
+			}
+
+			span {
+				border: none;
+				background-color: @dark_grey;
+			}
+
+			img:hover {opacity: 1;}
+
+			.input-group-addon {
+				.dimensions(50px, 50px);
+			}
+
+			.form-control {
+				-webkit-box-shadow: none;
+			            box-shadow: none;
+			    -webkit-transition: none;
+			         -o-transition: none;
+			            transition: none;
+			}
+
+			.btn-close:hover {
+				opacity: 0.7;
+				cursor: pointer;
+			}
+
+			.btn-close {
+				position: absolute;
+				top: 15px;
+				.dimensions(20px, 20px);
+			}
+
+			.btn-block {
+				transform-origin: 0% 50%;
+		        transition: transform 0.3s ease;
+			}
+
+			.btn-block.top, .btn-block.bottom {
+				position: absolute;
+				background-color: white;
+				.block-properties(100%, 1px, 0px 0px 5px 0px, 0px);
+			}
+
+			.btn-block.top {
+				top: 0px; 
+				width: 28px; 
+				transform: rotate(45deg);
+			}
+
+			.btn-block.bottom {
+				top: 20px;
+				width: 28px; 
+				transform: rotate(-45deg);
+			}
+		}
+	}
+
+}
+
+/*  ======================================
+				SOUS-NAVIGATION 
+	====================================== */
+
+#sub-nav-sm-xs {
+
+	/* ==============================================
+		
+	Plusieurs balise possède des classes spécifiques 
+	nécessaires aux animations de déroulement du menu
+	sur appareils mobiles.
+
+	Ces classes sont les suivantes :
+	- transform-color (changement de couleur)
+	-transform (changements diverses)
+	-rotate (rotation des lignes du bouton d'action
+			du menu)
+
+	Le temps d'animation de déroulement ou de fermeture
+	du menu est de : */
+	@t : 0.5s;
+
+	/* ============================================== */
+
+	.block-properties(100%, 46px, auto, 0px);
+	.transition-1(background-color, @t);
+
+	&.fixed {
+		position: fixed;
+		top: 0px;
+		z-index: 90;
+
+		h1, a {color: white;}
+
+		a:hover, a:focus {color: @light_grey;}
+
+		.list-menu-links {
+			background-color: @dark_grey;
+			opacity: 0.9;
+		}
+
+		.btn-block-left, .btn-block-right {background-color: white;}
+
+		.drop-down-list.visible {
+			top: 45px;
+			background-color: @dark_grey;
+		}
+
+		.horizontal-line {
+			background-color: @grey;
+			top: 45px;
+			&.transform {
+				top: 207px; 
+				background-color: @grey;
+			}
+		}
+	}
+
+	h1 {
+		.spacing(0px, 0px);
+		.transition-1(color, @t);
+		&.transform-color {color: white;}
+	}
+
+	.title-page-link {
+		&:hover, &:focus {color: initial;}
+	}
+
+	.list-menu-links {
+		position: relative;
+		z-index: 10;
+		background-color: white;
+		.block-properties(100%, 45px, auto, 10px 5px 0px 5px);
+
+		@media all and (max-width: 992px) {text-align: right;} /* Tablettes */
+		@media all and (max-width: 767px) {text-align: center;} /* Mobiles */
+
+		.transition-2(background-color, opacity, @t/2);
+		&.transform-color {background-color: @dark_grey; opacity: 1;}
+	}
+
+	li {padding: 5px 10px;}
+
+	a {
+		font-family: 'sf-ui-light';
+		font-size: 1em;
+		color: black; 
+
+		.transition-1(color, 250ms);
+		&:hover, &:focus {
+			color: #6BF;
+			text-decoration: none;
+		}
+	}
+
+	.btn-down {
+		.dimensions(34px, 20px);
+		&:hover {cursor: pointer;}
+	}
+
+	.btn-block-left, .btn-block-right {
+		.block-properties(21px, 2px, 10px 0px 0px 0px, 0px);
+		position: absolute;
+		background-color: black;
+		.transition-1(color, @t);
+		&.transform-color {background-color: white;}
+	}
+
+	.btn-block-left {
+		transform: rotate(45deg);
+		.transition-1(transform, @t);
+		&.rotate {transform: rotate(-45deg);}
+	}
+
+	.btn-block-right {
+		margin-left: 14px;
+		transform: rotate(-45deg);
+		.transition-1(transform, @t);
+		&.rotate {transform: rotate(45deg);}
+	}
+
+	.btn-custom {color: white;}
+
+	.horizontal-line {
+		position: absolute;
+		z-index: 15;
+		top: 95px;
+		background-color: black;
+
+		.transition-2(background-color, top, @t);
+		&.transform {top: 257px; background-color: @grey;}
+	}
+
+	.drop-down-list {
+		position: absolute;
+		z-index: 1;
+		top: -170px;
+   		background-color: white;
+   		.block-properties(100%, auto, 0px, 20px 40px);
+
+   		&.visible {
+			top: 95px;
+			background-color: @dark_grey;
+		}
+
+		li {.spacing(0px 10px, 0px);}
+
+		a {
+			display: block; /* Important ! */
+			color: white;
+			padding: 10px 0px;
+
+			&:hover, &:focus {
+				text-decoration: none;
+				color : @light_grey;
+			}
+		}
+
+		.horizontal-line {
+			position: relative;
+			top: 0px;
+			background-color: lighten(hsl(0, 0%, 20%), 10%);
+			.transition-2(background-color, top, @t);
+			&.transform {top: 0px; background-color: lighten(hsl(0, 0%, 20%), 10%);}
+		}
+
+	    .transition-2(top, background-color, @t);
+	}
+
+}
+
+
+
