@@ -2,58 +2,58 @@
 * Paramètres généraux d'une section
 */
 .section-default(@background) {
-	display: block;
-	width: 100%;
-	height: auto;
-	background: @background;
+  display: block;
+  width: 100%;
+  height: auto;
+  background: @background;
 }
 
 /*
 * Propriétés générales d'un block
 */
 .block-properties (@width, @height, @margin, @padding) {
-	width: @width;
-	height: @height;
-	margin: @margin;
-	padding: @padding;
+  width: @width;
+  height: @height;
+  margin: @margin;
+  padding: @padding;
 }
 
 /*
 * Définition des styles d'un block texte
 */
 .text-default (@police, @size, @spacing) {
-	font-family: @police;
-	font-size: @size;
-	padding: @spacing;
+  font-family: @police;
+  font-size: @size;
+  padding: @spacing;
 }
 
 /*
 * Définition des dimensions
 */
 .dimensions (@width, @height) {
-	width: @width;
-	height: @height;
+  width: @width;
+  height: @height;
 }
 
 /*
 * Définition de l'espacement
 */
 .spacing (@margin, @padding) {
-	margin: @margin;
-	padding: @padding;
+  margin: @margin;
+  padding: @padding;
 }
 
 /*
 * Mettre une image en fond
 */
 .background-cover (@image) {
-	background-image: url(@image);
- 	background-repeat: no-repeat;
- 	background-size: cover;
- 	-webkit-background-size: cover;
- 	background-position: center;
- 	width: 100%;
- 	height: 100%;
+  background-image: url(@image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
 }
 
 /* ========= ANIMATIONS CSS =========== */
@@ -62,31 +62,31 @@
 * Réalisation d'une transition
 */
 .transition-1 (@propertie, @time) {
-	-moz-transition: @propertie;
-	-webkit-transition: @propertie;
-	-o-transition: @propertie;
-	-ms-transition: @propertie;
-	transition-duration: @time;
+  -moz-transition: @propertie;
+  -webkit-transition: @propertie;
+  -o-transition: @propertie;
+  -ms-transition: @propertie;
+  transition-duration: @time;
 }
 
 /*
 * Réalisation de deux transitions
 */
 .transition-2 (@propertie1, @propertie2, @time) {
-	-moz-transition: @propertie1, @propertie2;
-	-webkit-transition: @propertie1, @propertie2;
-	-o-transition: @propertie1, @propertie2;
-	-ms-transition: @propertie1, @propertie2;
-	transition-duration: @time;
+  -moz-transition: @propertie1, @propertie2;
+  -webkit-transition: @propertie1, @propertie2;
+  -o-transition: @propertie1, @propertie2;
+  -ms-transition: @propertie1, @propertie2;
+  transition-duration: @time;
 }
 
 /*
 * Réalisation de trois transitions
 */
 .transition-3 (@propertie1, @propertie2, @propertie3, @time) {
-	-moz-transition: @propertie1, @propertie2, @propertie3;
-	-webkit-transition: @propertie1, @propertie2, @propertie3;
-	-o-transition: @propertie1, @propertie2, @propertie3;
-	-ms-transition: @propertie1, @propertie2, @propertie3;
-	transition-duration: @time;
+  -moz-transition: @propertie1, @propertie2, @propertie3;
+  -webkit-transition: @propertie1, @propertie2, @propertie3;
+  -o-transition: @propertie1, @propertie2, @propertie3;
+  -ms-transition: @propertie1, @propertie2, @propertie3;
+  transition-duration: @time;
 }
