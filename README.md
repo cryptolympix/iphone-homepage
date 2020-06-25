@@ -6,5 +6,5 @@ A clone of the iPhone 7 homepage.
 * [JQuery](https://jquery.com/)
 * [Less](http://lesscss.org/) (CSS extension)
 
-## Link
-https://maximejoly.yj.fr/iphone-homepage/
+## Demo
+https://iphone-homepage.netlify.app
